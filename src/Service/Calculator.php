@@ -22,4 +22,9 @@ class Calculator implements CalculatorInterface
     {
         return $firstNumber - $secondNumber;
     }
+
+    public function multiply(float $firstNumber, float $secondNumber): float
+    {
+        return $firstNumber * $secondNumber;
+    }
 }
