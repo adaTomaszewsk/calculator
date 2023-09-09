@@ -27,4 +27,15 @@ class Calculator implements CalculatorInterface
     {
         return $firstNumber * $secondNumber;
     }
+
+    /**
+     * @throws \Exception
+     */
+    public function divide(float $firstNumber, float $secondNumber): float
+    {
+        if ($secondNumber == 0) {
+            throw new \Exception('Can not divide by 0.');
+        }
+        return $firstNumber / $secondNumber;
+    }
 }

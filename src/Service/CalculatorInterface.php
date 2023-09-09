@@ -9,4 +9,6 @@ interface CalculatorInterface
     public function subtract(float $firstNumber, float $secondNumber): float;
 
     public function multiply(float $firstNumber, float $secondNumber): float;
+
+    public function divide(float $firstNumber, float $secondNumber): float;
 }

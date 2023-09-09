@@ -80,4 +80,27 @@ class CalculatorTest extends KernelTestCase
         $this->assertEquals(48, $this->calculator->multiply(-12, -4));
         $this->assertEquals(0, $this->calculator->multiply(-15, 0));
     }
+
+    public function testDividingInt(): void
+    {
+        $this->assertEquals(4, $this->calculator->divide(8, 2));
+        $this->assertEquals(0.25, $this->calculator->divide(12, 48));
+        // testing dividing by zero exception
+        $this->expectException(\Exception::class);
+        $this->calculator->divide(-15, 0);
+    }
+
+    public function testDividingFloat(): void
+    {
+        $this->assertEquals(8.1, $this->calculator->divide(16.2, 2));
+        $this->assertEquals(4, $this->calculator->divide(10, 2.5));
+        $this->assertEquals(0.16, $this->calculator->divide(0.16, 1));
+    }
+
+    public function testDividingNegative(): void
+    {
+        $this->assertEquals(4, $this->calculator->divide(-12, -3));
+        $this->assertEquals(-10, $this->calculator->divide(100, -10));
+        $this->assertEquals(-2, $this->calculator->divide(-10, 5));
+    }
 }
