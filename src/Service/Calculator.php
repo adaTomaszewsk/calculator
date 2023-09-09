@@ -17,4 +17,9 @@ class Calculator implements CalculatorInterface
     {
         return $firstNumber + $secondNumber;
     }
+
+    public function subtract(float $firstNumber, float $secondNumber): float
+    {
+        return $firstNumber - $secondNumber;
+    }
 }

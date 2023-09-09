@@ -38,4 +38,25 @@ class CalculatorTest extends KernelTestCase
         $this->assertEquals(-7, $this->calculator->add(-3, -4));
         $this->assertEquals(3, $this->calculator->add(-10, 13));
     }
+
+    public function testSubtractingInt(): void
+    {
+        $this->assertEquals(12, $this->calculator->subtract(17, 5));
+        $this->assertEquals(15, $this->calculator->subtract(15, 0));
+        $this->assertEquals(0, $this->calculator->subtract(7, 7));
+    }
+
+    public function testSubtractingFloat(): void
+    {
+        $this->assertEquals(11.6, $this->calculator->subtract(22.75, 11.15));
+        $this->assertEquals(11.4, $this->calculator->subtract(14.3, 2.9));
+        $this->assertEquals(111.01, $this->calculator->subtract(123.12, 12.11));
+    }
+
+    public function testSubtractingNegative(): void
+    {
+        $this->assertEquals(-2.5, $this->calculator->subtract(-12.5, -10));
+        $this->assertEquals(8.5, $this->calculator->subtract(5.2, -3.3));
+        $this->assertEquals(-11.3, $this->calculator->subtract(-6.2, 5.1));
+    }
 }
